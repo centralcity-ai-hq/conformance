@@ -7,9 +7,9 @@ import { runMcp, runSchemas, runValidator, schemaValidator } from '../src/run.mj
 const cases = loadCases();
 const semantic = cases.filter((c) => c.verdict === 'semantic').length;
 
-test('the shipped cases: 187, each with a schema, all three verdicts present', () => {
+test('the shipped cases: 239, each with a schema, all three verdicts present', () => {
   const schemas = loadSchemas();
-  assert.equal(cases.length, 187);
+  assert.equal(cases.length, 239);
   for (const c of cases) assert.ok(schemas.has(c.schema), c.id);
   for (const verdict of ['valid', 'invalid', 'semantic'])
     assert.ok(cases.some((c) => c.verdict === verdict), verdict);
